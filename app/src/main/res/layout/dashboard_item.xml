@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="right|center_vertical"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="Day"
+        android:id="@+id/time"
+
+
+
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="left|center_vertical"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="weather"
+        android:id="@+id/weather"
+
+
+        android:textAlignment="center" />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="temperature"
+            android:id="@+id/temperature"
+
+
+            android:textAlignment="center" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="precipitation"
+                android:id="@+id/preci"
+
+
+                android:textAlignment="center" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="Humidity"
+                android:id="@+id/humidity"
+
+
+                android:textAlignment="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="Wind"
+                android:id="@+id/wind"
+
+
+                android:textAlignment="center" />
+</LinearLayout>
+        </LinearLayout>

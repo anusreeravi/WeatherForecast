@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">WeatherForecast</string>
+    <string name="Loading">Loading</string>
+    <string name="home">Home</string>
+    <string name="enter_locn">CITY NAME</string>
+    <string name="enter_code">COUNTRY CODE</string>
+    <string name="Ok">Ok</string>
+    <string name="Cancel">Cancel</string>
+    <string name="location_alert">Please enable GPS</string>
+    <string name="fiveforecast">Five Day Weather Forecast</string>
+    <string name="request_location">Requesting Location...</string>
+
+</resources>
