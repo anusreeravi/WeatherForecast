@@ -2,17 +2,12 @@ package com.android.weatherforecast.services;
 
 import android.app.Service;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.provider.Settings;
-import android.support.v7.app.AlertDialog;
-
-import com.android.weatherforecast.R;
 
 /**
  * Created by Anu on 25/10/2017.
@@ -26,8 +21,6 @@ public class LocationUpdateService extends Service implements LocationListener {
     }
 
     private LocationStatusListener mStatusListener;
-
-    private static String TAG = LocationUpdateService.class.getName();
 
     private final Context mContext;
 
@@ -43,10 +36,8 @@ public class LocationUpdateService extends Service implements LocationListener {
 
     private static final long MIN_TIME = 1000 * 2 ; // 2 seconds
 
-    // Declaring a Location Manager
     protected LocationManager locationManager;
 
-    // Store LocationManager.GPS_PROVIDER or LocationManager.NETWORK_PROVIDER information
     private String provider_info;
 
     public LocationUpdateService(Context context) {
@@ -105,7 +96,7 @@ public class LocationUpdateService extends Service implements LocationListener {
     }
 
     /**
-     * Update GPSTracker latitude and longitude
+     * Update  latitude and longitude
      */
     public void updateGPSCoordinates() {
         if (location != null) {
@@ -114,42 +105,7 @@ public class LocationUpdateService extends Service implements LocationListener {
         }
     }
 
-    /**
-     * GPSTracker latitude getter and setter
-     * @return latitude
-     */
-    public double getLatitude() {
-        if (location != null) {
-            latitude = location.getLatitude();
-        }
 
-        return latitude;
-    }
-
-    /**
-     * GPSTracker longitude getter and setter
-     * @return
-     */
-    public double getLongitude() {
-        if (location != null) {
-            longitude = location.getLongitude();
-        }
-
-        return longitude;
-    }
-
-    /**
-     * GPSTracker isGPSTrackingEnabled getter.
-     * Check GPS/wifi is enabled
-     */
-    public boolean IsGPSTrackingEnabled() {
-
-        return this.isGPSTrackingEnabled;
-    }
-    public boolean IsNetworkEnabled() {
-
-        return this.isNetworkEnabled;
-    }
     /**
      * Stop using GPS listener
      * Calling this method will stop using GPS in your app
@@ -160,40 +116,6 @@ public class LocationUpdateService extends Service implements LocationListener {
         }
     }
 
-    /**
-     * Function to show settings alert dialog
-     */
-    public void showSettingsAlert() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
-
-        //Setting Dialog Title
-        alertDialog.setTitle(R.string.app_name);
-
-        //Setting Dialog Message
-        alertDialog.setMessage(R.string.location_alert);
-
-        //On Pressing Setting button
-        alertDialog.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                mContext.startActivity(intent);
-            }
-        });
-
-        //On pressing cancel button
-        alertDialog.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-                dialog.cancel();
-            }
-        });
-        alertDialog.show();
-    }
 
     @Override
     public void onLocationChanged(Location location) {

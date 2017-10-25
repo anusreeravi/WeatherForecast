@@ -2,7 +2,6 @@ package com.android.weatherforecast.fragments;
 
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -17,9 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.android.weatherforecast.R;
-import com.android.weatherforecast.models.WeatherData;
-import com.android.weatherforecast.webservices.common.WebserviceCallBack;
-import com.android.weatherforecast.webservices.services.GetWeatherDetails;
 
 import java.util.ArrayList;
 import java.util.List;
